@@ -20,12 +20,33 @@ static struct proc_dir_entry *g_file;
 static char g_buffer[PAGE_SIZE];
 static char path[PATH_MAX];
 
+static void *seq_start(struct seq_file *m, loff_t *pos);
+static void seq_stop(struct seq_file *m, void *v);
+static void *seq_next(struct seq_file *m, void *v, loff_t *pos);
+static int seq_show(struct seq_file *m, void *v);
+
 static const struct seq_operations seqops = {
-	.start = NULL,
-	.next = NULL,
-	.stop = NULL,
-	.show = NULL
+	.start = seq_start,
+	.next = seq_next,
+	.stop = seq_stop,
+	.show = seq_show
 };
+
+static void *seq_start(struct seq_file *m, loff_t *pos)
+{
+}
+
+static void seq_stop(struct seq_file *m, void *v)
+{
+}
+
+static void *seq_next(struct seq_file *m, void *v, loff_t *pos)
+{
+}
+
+static int seq_show(struct seq_file *m, void *v)
+{
+}
 
 static void append_to_buffer(struct mount *entry)
 {
@@ -48,7 +69,7 @@ static void recursive_append(struct mount *mnt)
 	append_to_buffer(mnt);
 	list_for_each_entry(current_entry,
 			&mnt->mnt_mounts, mnt_child) {
-			append_to_buffer(current_entry);
+		append_to_buffer(current_entry);
 	}
 }
 
