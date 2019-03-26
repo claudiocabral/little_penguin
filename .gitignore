@@ -6,3 +6,5 @@
 *.order
 *.cmd
 *.mod
+*.d
+*~
