@@ -12,10 +12,10 @@ MODULE_AUTHOR("Louis Solofrizzo <louis@ne02ptzero.me>");
 MODULE_DESCRIPTION("Reverses input written to itself");
 
 static ssize_t reverse_read(struct file *fp, char __user *user,
-		size_t size, loff_t *offs);
+			    size_t size, loff_t *offs);
 
 static ssize_t reverse_write(struct file *fp, const char __user *user,
-		size_t size, loff_t *offs);
+			     size_t size, loff_t *offs);
 
 static const struct file_operations reverse_fops = {
 	.owner = THIS_MODULE,
@@ -32,7 +32,7 @@ static struct miscdevice reverse_device = {
 DEFINE_RWLOCK(reverse_lock);
 static char str[PAGE_SIZE];
 static char rev[PAGE_SIZE];
-static size_t str_size;
+static ssize_t str_size;
 
 static int __init reverse_init(void)
 {
@@ -45,7 +45,7 @@ static void __exit reverse_cleanup(void)
 }
 
 static ssize_t reverse_read(struct file *fp, char __user *user, size_t size,
-		loff_t *offs)
+			    loff_t *offs)
 {
 	size_t tmp;
 	size_t i = 0;
@@ -65,12 +65,30 @@ static ssize_t reverse_read(struct file *fp, char __user *user, size_t size,
 }
 
 static ssize_t reverse_write(struct file *fp, const char __user *user,
-		size_t size, loff_t *offs)
+			     size_t size, loff_t *offs)
 {
+	ssize_t i;
+	ssize_t tmp;
+
 	write_lock(&reverse_lock);
-	str_size = simple_write_to_buffer(str, PAGE_SIZE, offs, user, size);
+	i = 0;
+	while (size > PAGE_SIZE) {
+		tmp = simple_write_to_buffer(str, PAGE_SIZE, offs,
+					     user, PAGE_SIZE);
+		if (tmp <= 0)
+			goto ret;
+		i += tmp;
+		*offs = 0;
+		size -= PAGE_SIZE;
+	}
+	tmp = simple_write_to_buffer(str, PAGE_SIZE, offs, user, size);
+	if (tmp <= 0)
+		goto ret;
+	str_size = tmp;
+	tmp += i;
+ret:
 	write_unlock(&reverse_lock);
-	return str_size;
+	return tmp;
 }
 
 module_init(reverse_init);
