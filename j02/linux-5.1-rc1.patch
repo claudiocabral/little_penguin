@@ -1,0 +1,13 @@
+diff --git a/Makefile b/Makefile
+index 99c0530489ef..3e8e5982357f 100644
+--- a/Makefile
++++ b/Makefile
+@@ -2,7 +2,7 @@
+ VERSION = 5
+ PATCHLEVEL = 1
+ SUBLEVEL = 0
+-EXTRAVERSION = -rc1
++EXTRAVERSION = -rc1-thor_kernel
+ NAME = Shy Crocodile
+ 
+ # *DOCUMENTATION*
