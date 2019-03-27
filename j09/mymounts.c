@@ -18,8 +18,6 @@ MODULE_AUTHOR("Claudio Cabral <cl@udio.co>");
 MODULE_DESCRIPTION("This module talks to Morty");
 
 static struct proc_dir_entry *g_file;
-static char g_buffer[PAGE_SIZE];
-static char path[PATH_MAX];
 
 static void *seq_start(struct seq_file *m, loff_t *pos);
 static void seq_stop(struct seq_file *m, void *v);
@@ -38,7 +36,9 @@ static void *seq_start(struct seq_file *m, loff_t *pos)
 	struct mount *mnt;
 
 	mnt = real_mount(current->fs->root.mnt);
-	m->private = &mnt->mnt_mounts;
+	if (mnt->mnt_parent)
+		mnt = mnt->mnt_parent;
+	m->private = &mnt->mnt_list;
 	return seq_list_start(m->private, *pos);
 }
 
@@ -51,46 +51,29 @@ static void *seq_next(struct seq_file *m, void *v, loff_t *pos)
 	return seq_list_next(v, m->private, pos);
 }
 
+static void print_recursive(struct seq_file *m, struct mount *mnt)
+{
+	if (!mnt || !mnt->mnt_parent || !mnt_has_parent(mnt->mnt_parent))
+		return;
+	print_recursive(m, mnt->mnt_parent);
+	seq_dentry(m, mnt->mnt_mountpoint, "");
+}
+
 static int seq_show(struct seq_file *m, void *v)
 {
 	struct mount *mnt;
 
-	mnt = list_entry(v, struct mount, mnt_child);
-
-	seq_printf(m, "%-16s\n", mnt->mnt_devname);
-	seq_dentry(m, mnt->mnt_mountpoint, "");
-	return 0;
-}
-
-static void append_to_buffer(struct mount *entry)
-{
-	char *real_path;
-
-	real_path = dentry_path_raw(entry->mnt_mountpoint, path, PATH_MAX);
-	if (IS_ROOT(entry->mnt_mountpoint))
-		strlcat(g_buffer, "root", PAGE_SIZE);
-	else
-		strlcat(g_buffer, entry->mnt_devname, PAGE_SIZE);
-	strlcat(g_buffer, " ", PAGE_SIZE);
-	strlcat(g_buffer, real_path, PAGE_SIZE);
-	strlcat(g_buffer, "\n", PAGE_SIZE);
-}
-
-static void recursive_append(struct mount *mnt)
-{
-	struct mount *current_entry;
-
-	append_to_buffer(mnt);
-	list_for_each_entry(current_entry,
-			&mnt->mnt_mounts, mnt_child) {
-		append_to_buffer(current_entry);
+	mnt = list_entry(v, struct mount, mnt_list);
+	if (!mnt || !mnt->mnt_mountpoint || !mnt->mnt_parent)
+		return 0;
+	if (strcmp(mnt->mnt_parent->mnt_devname, "rootfs") == 0) {
+		seq_printf(m, "%-16s/\n", mnt->mnt_devname);
+	} else if (mnt->mnt_mountpoint->d_flags & DCACHE_MOUNTED) {
+		seq_printf(m, "%-16s", mnt->mnt_devname);
+		print_recursive(m, mnt);
+		seq_putc(m, '\n');
 	}
-}
-
-static void update_mounts(void)
-{
-	*g_buffer = 0;
-	recursive_append(real_mount(current->fs->root.mnt));
+	return 0;
 }
 
 static int mymounts_open(struct inode *node, struct file *filp)
@@ -101,8 +84,6 @@ static int mymounts_open(struct inode *node, struct file *filp)
 static const struct file_operations fops = {
 	.owner = THIS_MODULE,
 	.open = mymounts_open,
-	// .read = mymounts_read,
-	// .write = mymounts_write
 	.read = seq_read,
 	.llseek = seq_lseek,
 	.release = seq_release
