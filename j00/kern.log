@@ -1,0 +1,428 @@
+Mar 27 11:56:01 ccabral kernel: [    0.000000] Linux version 5.1.0-rc1 (root@ccabral) (gcc version 8.2.0 (GCC)) #1 SMP Fri Mar 22 11:35:19 CET 2019
+Mar 27 11:56:01 ccabral kernel: [    0.000000] Command line: BOOT_IMAGE=/vmlinuz-5.1.0-rc1-j00 root=/dev/sda3 ro
+Mar 27 11:56:01 ccabral kernel: [    0.000000] x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
+Mar 27 11:56:01 ccabral kernel: [    0.000000] x86/fpu: Supporting XSAVE feature 0x002: 'SSE registers'
+Mar 27 11:56:01 ccabral kernel: [    0.000000] x86/fpu: Supporting XSAVE feature 0x004: 'AVX registers'
+Mar 27 11:56:01 ccabral kernel: [    0.000000] x86/fpu: Supporting XSAVE feature 0x008: 'MPX bounds registers'
+Mar 27 11:56:01 ccabral kernel: [    0.000000] x86/fpu: Supporting XSAVE feature 0x010: 'MPX CSR'
+Mar 27 11:56:01 ccabral kernel: [    0.000000] x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+Mar 27 11:56:01 ccabral kernel: [    0.000000] x86/fpu: xstate_offset[3]:  832, xstate_sizes[3]:   64
+Mar 27 11:56:01 ccabral kernel: [    0.000000] x86/fpu: xstate_offset[4]:  896, xstate_sizes[4]:   64
+Mar 27 11:56:01 ccabral kernel: [    0.000000] x86/fpu: Enabled xstate features 0x1f, context size is 960 bytes, using 'compacted' format.
+Mar 27 11:56:01 ccabral kernel: [    0.000000] BIOS-provided physical RAM map:
+Mar 27 11:56:01 ccabral kernel: [    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+Mar 27 11:56:01 ccabral kernel: [    0.000000] BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+Mar 27 11:56:01 ccabral kernel: [    0.000000] BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+Mar 27 11:56:01 ccabral kernel: [    0.000000] BIOS-e820: [mem 0x0000000000100000-0x00000000bffdefff] usable
+Mar 27 11:56:01 ccabral kernel: [    0.000000] BIOS-e820: [mem 0x00000000bffdf000-0x00000000bfffffff] reserved
+Mar 27 11:56:01 ccabral kernel: [    0.000000] BIOS-e820: [mem 0x00000000feffc000-0x00000000feffffff] reserved
+Mar 27 11:56:01 ccabral kernel: [    0.000000] BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+Mar 27 11:56:01 ccabral kernel: [    0.000000] BIOS-e820: [mem 0x0000000100000000-0x000000013fffffff] usable
+Mar 27 11:56:01 ccabral kernel: [    0.000000] NX (Execute Disable) protection: active
+Mar 27 11:56:01 ccabral kernel: [    0.000000] SMBIOS 2.8 present.
+Mar 27 11:56:01 ccabral kernel: [    0.000000] DMI: QEMU Standard PC (i440FX + PIIX, 1996), BIOS 1.12.0-20181126_142135-anatol 04/01/2014
+Mar 27 11:56:01 ccabral kernel: [    0.000000] tsc: Fast TSC calibration using PIT
+Mar 27 11:56:01 ccabral kernel: [    0.000000] tsc: Detected 1799.897 MHz processor
+Mar 27 11:56:01 ccabral kernel: [    0.001266] e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+Mar 27 11:56:01 ccabral kernel: [    0.001267] e820: remove [mem 0x000a0000-0x000fffff] usable
+Mar 27 11:56:01 ccabral kernel: [    0.001270] last_pfn = 0x140000 max_arch_pfn = 0x400000000
+Mar 27 11:56:01 ccabral kernel: [    0.001291] MTRR default type: write-back
+Mar 27 11:56:01 ccabral kernel: [    0.001291] MTRR fixed ranges enabled:
+Mar 27 11:56:01 ccabral kernel: [    0.001292]   00000-9FFFF write-back
+Mar 27 11:56:01 ccabral kernel: [    0.001292]   A0000-BFFFF uncachable
+Mar 27 11:56:01 ccabral kernel: [    0.001293]   C0000-FFFFF write-protect
+Mar 27 11:56:01 ccabral kernel: [    0.001293] MTRR variable ranges enabled:
+Mar 27 11:56:01 ccabral kernel: [    0.001294]   0 base 00C0000000 mask FFC0000000 uncachable
+Mar 27 11:56:01 ccabral kernel: [    0.001294]   1 disabled
+Mar 27 11:56:01 ccabral kernel: [    0.001295]   2 disabled
+Mar 27 11:56:01 ccabral kernel: [    0.001295]   3 disabled
+Mar 27 11:56:01 ccabral kernel: [    0.001295]   4 disabled
+Mar 27 11:56:01 ccabral kernel: [    0.001295]   5 disabled
+Mar 27 11:56:01 ccabral kernel: [    0.001296]   6 disabled
+Mar 27 11:56:01 ccabral kernel: [    0.001296]   7 disabled
+Mar 27 11:56:01 ccabral kernel: [    0.001303] x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT  
+Mar 27 11:56:01 ccabral kernel: [    0.001307] last_pfn = 0xbffdf max_arch_pfn = 0x400000000
+Mar 27 11:56:01 ccabral kernel: [    0.004376] found SMP MP-table at [mem 0x000f5c40-0x000f5c4f] mapped at [(____ptrval____)]
+Mar 27 11:56:01 ccabral kernel: [    0.004405] check: Scanning 1 areas for low memory corruption
+Mar 27 11:56:01 ccabral kernel: [    0.004406] Base memory trampoline at [(____ptrval____)] 99000 size 24576
+Mar 27 11:56:01 ccabral kernel: [    0.004419] Using GB pages for direct mapping
+Mar 27 11:56:01 ccabral kernel: [    0.004421] BRK [0x34801000, 0x34801fff] PGTABLE
+Mar 27 11:56:01 ccabral kernel: [    0.004422] BRK [0x34802000, 0x34802fff] PGTABLE
+Mar 27 11:56:01 ccabral kernel: [    0.004423] BRK [0x34803000, 0x34803fff] PGTABLE
+Mar 27 11:56:01 ccabral kernel: [    0.004431] BRK [0x34804000, 0x34804fff] PGTABLE
+Mar 27 11:56:01 ccabral kernel: [    0.004471] ACPI: Early table checksum verification disabled
+Mar 27 11:56:01 ccabral kernel: [    0.004473] ACPI: RSDP 0x00000000000F5BF0 000014 (v00 BOCHS )
+Mar 27 11:56:01 ccabral kernel: [    0.004475] ACPI: RSDT 0x00000000BFFE1420 000030 (v01 BOCHS  BXPCRSDT 00000001 BXPC 00000001)
+Mar 27 11:56:01 ccabral kernel: [    0.004479] ACPI: FACP 0x00000000BFFE12CC 000074 (v01 BOCHS  BXPCFACP 00000001 BXPC 00000001)
+Mar 27 11:56:01 ccabral kernel: [    0.004482] ACPI: DSDT 0x00000000BFFDFCC0 00160C (v01 BOCHS  BXPCDSDT 00000001 BXPC 00000001)
+Mar 27 11:56:01 ccabral kernel: [    0.004484] ACPI: FACS 0x00000000BFFDFC80 000040
+Mar 27 11:56:01 ccabral kernel: [    0.004485] ACPI: APIC 0x00000000BFFE1340 0000A8 (v01 BOCHS  BXPCAPIC 00000001 BXPC 00000001)
+Mar 27 11:56:01 ccabral kernel: [    0.004487] ACPI: HPET 0x00000000BFFE13E8 000038 (v01 BOCHS  BXPCHPET 00000001 BXPC 00000001)
+Mar 27 11:56:01 ccabral kernel: [    0.004491] ACPI: Local APIC address 0xfee00000
+Mar 27 11:56:01 ccabral kernel: [    0.004678] No NUMA configuration found
+Mar 27 11:56:01 ccabral kernel: [    0.004679] Faking a node at [mem 0x0000000000000000-0x000000013fffffff]
+Mar 27 11:56:01 ccabral kernel: [    0.004681] NODE_DATA(0) allocated [mem 0x13fffa000-0x13fffdfff]
+Mar 27 11:56:01 ccabral kernel: [    0.004691] Zone ranges:
+Mar 27 11:56:01 ccabral kernel: [    0.004691]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+Mar 27 11:56:01 ccabral kernel: [    0.004692]   DMA32    [mem 0x0000000001000000-0x00000000ffffffff]
+Mar 27 11:56:01 ccabral kernel: [    0.004693]   Normal   [mem 0x0000000100000000-0x000000013fffffff]
+Mar 27 11:56:01 ccabral kernel: [    0.004694] Movable zone start for each node
+Mar 27 11:56:01 ccabral kernel: [    0.004694] Early memory node ranges
+Mar 27 11:56:01 ccabral kernel: [    0.004695]   node   0: [mem 0x0000000000001000-0x000000000009efff]
+Mar 27 11:56:01 ccabral kernel: [    0.004696]   node   0: [mem 0x0000000000100000-0x00000000bffdefff]
+Mar 27 11:56:01 ccabral kernel: [    0.004696]   node   0: [mem 0x0000000100000000-0x000000013fffffff]
+Mar 27 11:56:01 ccabral kernel: [    0.004702] Zeroed struct page in unavailable ranges: 131 pages
+Mar 27 11:56:01 ccabral kernel: [    0.004703] Initmem setup node 0 [mem 0x0000000000001000-0x000000013fffffff]
+Mar 27 11:56:01 ccabral kernel: [    0.004704] On node 0 totalpages: 1048445
+Mar 27 11:56:01 ccabral kernel: [    0.004705]   DMA zone: 64 pages used for memmap
+Mar 27 11:56:01 ccabral kernel: [    0.004705]   DMA zone: 21 pages reserved
+Mar 27 11:56:01 ccabral kernel: [    0.004706]   DMA zone: 3998 pages, LIFO batch:0
+Mar 27 11:56:01 ccabral kernel: [    0.004769]   DMA32 zone: 12224 pages used for memmap
+Mar 27 11:56:01 ccabral kernel: [    0.004769]   DMA32 zone: 782303 pages, LIFO batch:63
+Mar 27 11:56:01 ccabral kernel: [    0.036178]   Normal zone: 4096 pages used for memmap
+Mar 27 11:56:01 ccabral kernel: [    0.036180]   Normal zone: 262144 pages, LIFO batch:63
+Mar 27 11:56:01 ccabral kernel: [    0.042823] ACPI: PM-Timer IO Port: 0x608
+Mar 27 11:56:01 ccabral kernel: [    0.042826] ACPI: Local APIC address 0xfee00000
+Mar 27 11:56:01 ccabral kernel: [    0.042832] ACPI: LAPIC_NMI (acpi_id[0xff] dfl dfl lint[0x1])
+Mar 27 11:56:01 ccabral kernel: [    0.042876] IOAPIC[0]: apic_id 0, version 17, address 0xfec00000, GSI 0-23
+Mar 27 11:56:01 ccabral kernel: [    0.042879] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+Mar 27 11:56:01 ccabral kernel: [    0.042880] ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 high level)
+Mar 27 11:56:01 ccabral kernel: [    0.042881] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+Mar 27 11:56:01 ccabral kernel: [    0.042882] ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_irq 10 high level)
+Mar 27 11:56:01 ccabral kernel: [    0.042883] ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_irq 11 high level)
+Mar 27 11:56:01 ccabral kernel: [    0.042884] ACPI: IRQ0 used by override.
+Mar 27 11:56:01 ccabral kernel: [    0.042885] ACPI: IRQ5 used by override.
+Mar 27 11:56:01 ccabral kernel: [    0.042886] ACPI: IRQ9 used by override.
+Mar 27 11:56:01 ccabral kernel: [    0.042886] ACPI: IRQ10 used by override.
+Mar 27 11:56:01 ccabral kernel: [    0.042886] ACPI: IRQ11 used by override.
+Mar 27 11:56:01 ccabral kernel: [    0.042888] Using ACPI (MADT) for SMP configuration information
+Mar 27 11:56:01 ccabral kernel: [    0.042890] ACPI: HPET id: 0x8086a201 base: 0xfed00000
+Mar 27 11:56:01 ccabral kernel: [    0.042898] smpboot: Allowing 7 CPUs, 0 hotplug CPUs
+Mar 27 11:56:01 ccabral kernel: [    0.042907] PM: Registered nosave memory: [mem 0x00000000-0x00000fff]
+Mar 27 11:56:01 ccabral kernel: [    0.042908] PM: Registered nosave memory: [mem 0x0009f000-0x0009ffff]
+Mar 27 11:56:01 ccabral kernel: [    0.042909] PM: Registered nosave memory: [mem 0x000a0000-0x000effff]
+Mar 27 11:56:01 ccabral kernel: [    0.042910] PM: Registered nosave memory: [mem 0x000f0000-0x000fffff]
+Mar 27 11:56:01 ccabral kernel: [    0.042911] PM: Registered nosave memory: [mem 0xbffdf000-0xbfffffff]
+Mar 27 11:56:01 ccabral kernel: [    0.042912] PM: Registered nosave memory: [mem 0xc0000000-0xfeffbfff]
+Mar 27 11:56:01 ccabral kernel: [    0.042912] PM: Registered nosave memory: [mem 0xfeffc000-0xfeffffff]
+Mar 27 11:56:01 ccabral kernel: [    0.042913] PM: Registered nosave memory: [mem 0xff000000-0xfffbffff]
+Mar 27 11:56:01 ccabral kernel: [    0.042914] PM: Registered nosave memory: [mem 0xfffc0000-0xffffffff]
+Mar 27 11:56:01 ccabral kernel: [    0.042916] [mem 0xc0000000-0xfeffbfff] available for PCI devices
+Mar 27 11:56:01 ccabral kernel: [    0.042919] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1910969940391419 ns
+Mar 27 11:56:01 ccabral kernel: [    0.042927] random: get_random_bytes called from start_kernel+0x90/0x48a with crng_init=0
+Mar 27 11:56:01 ccabral kernel: [    0.042932] setup_percpu: NR_CPUS:64 nr_cpumask_bits:64 nr_cpu_ids:7 nr_node_ids:1
+Mar 27 11:56:01 ccabral kernel: [    0.043089] percpu: Embedded 43 pages/cpu @(____ptrval____) s138136 r8192 d29800 u262144
+Mar 27 11:56:01 ccabral kernel: [    0.043094] pcpu-alloc: s138136 r8192 d29800 u262144 alloc=1*2097152
+Mar 27 11:56:01 ccabral kernel: [    0.043095] pcpu-alloc: [0] 0 1 2 3 4 5 6 - 
+Mar 27 11:56:01 ccabral kernel: [    0.043109] Built 1 zonelists, mobility grouping on.  Total pages: 1032040
+Mar 27 11:56:01 ccabral kernel: [    0.043110] Policy zone: Normal
+Mar 27 11:56:01 ccabral kernel: [    0.043111] Kernel command line: BOOT_IMAGE=/vmlinuz-5.1.0-rc1-j00 root=/dev/sda3 ro
+Mar 27 11:56:01 ccabral kernel: [    0.047281] Calgary: detecting Calgary via BIOS EBDA area
+Mar 27 11:56:01 ccabral kernel: [    0.047283] Calgary: Unable to locate Rio Grande table in EBDA - bailing!
+Mar 27 11:56:01 ccabral kernel: [    0.058164] Memory: 4036288K/4193780K available (14340K kernel code, 1294K rwdata, 3080K rodata, 1276K init, 1384K bss, 157492K reserved, 0K cma-reserved)
+Mar 27 11:56:01 ccabral kernel: [    0.058214] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=7, Nodes=1
+Mar 27 11:56:01 ccabral kernel: [    0.058218] Kernel/User page tables isolation: enabled
+Mar 27 11:56:01 ccabral kernel: [    0.058292] rcu: Hierarchical RCU implementation.
+Mar 27 11:56:01 ccabral kernel: [    0.058293] rcu: ^IRCU event tracing is enabled.
+Mar 27 11:56:01 ccabral kernel: [    0.058294] rcu: ^IRCU restricting CPUs from NR_CPUS=64 to nr_cpu_ids=7.
+Mar 27 11:56:01 ccabral kernel: [    0.058295] rcu: RCU calculated value of scheduler-enlistment delay is 100 jiffies.
+Mar 27 11:56:01 ccabral kernel: [    0.058296] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=7
+Mar 27 11:56:01 ccabral kernel: [    0.058443] NR_IRQS: 4352, nr_irqs: 480, preallocated irqs: 16
+Mar 27 11:56:01 ccabral kernel: [    0.069952] Console: colour VGA+ 80x25
+Mar 27 11:56:01 ccabral kernel: [    0.124003] printk: console [tty0] enabled
+Mar 27 11:56:01 ccabral kernel: [    0.124736] ACPI: Core revision 20190215
+Mar 27 11:56:01 ccabral kernel: [    0.125738] clocksource: hpet: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604467 ns
+Mar 27 11:56:01 ccabral kernel: [    0.127112] hpet clockevent registered
+Mar 27 11:56:01 ccabral kernel: [    0.127149] APIC: Switch to symmetric I/O mode setup
+Mar 27 11:56:01 ccabral kernel: [    0.129647] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+Mar 27 11:56:01 ccabral kernel: [    0.135161] clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles: 0x19f1c85d3ca, max_idle_ns: 440795296906 ns
+Mar 27 11:56:01 ccabral kernel: [    0.136123] Calibrating delay loop (skipped), value calculated using timer frequency.. 3599.79 BogoMIPS (lpj=1799897)
+Mar 27 11:56:01 ccabral kernel: [    0.137103] pid_max: default: 32768 minimum: 301
+Mar 27 11:56:01 ccabral kernel: [    0.137632] LSM: Security Framework initializing
+Mar 27 11:56:01 ccabral kernel: [    0.138107] SELinux:  Initializing.
+Mar 27 11:56:01 ccabral kernel: [    0.138498] *** VALIDATE SELinux ***
+Mar 27 11:56:01 ccabral kernel: [    0.139629] Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes)
+Mar 27 11:56:01 ccabral kernel: [    0.140430] Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes)
+Mar 27 11:56:01 ccabral kernel: [    0.141112] Mount-cache hash table entries: 8192 (order: 4, 65536 bytes)
+Mar 27 11:56:01 ccabral kernel: [    0.141596] Mountpoint-cache hash table entries: 8192 (order: 4, 65536 bytes)
+Mar 27 11:56:01 ccabral kernel: [    0.142197] *** VALIDATE proc ***
+Mar 27 11:56:01 ccabral kernel: [    0.142595] *** VALIDATE cgroup1 ***
+Mar 27 11:56:01 ccabral kernel: [    0.142975] *** VALIDATE cgroup2 ***
+Mar 27 11:56:01 ccabral kernel: [    0.143155] x86/cpu: User Mode Instruction Prevention (UMIP) activated
+Mar 27 11:56:01 ccabral kernel: [    0.143569] mce: CPU supports 10 MCE banks
+Mar 27 11:56:01 ccabral kernel: [    0.144139] Last level iTLB entries: 4KB 0, 2MB 0, 4MB 0
+Mar 27 11:56:01 ccabral kernel: [    0.144517] Last level dTLB entries: 4KB 0, 2MB 0, 4MB 0, 1GB 0
+Mar 27 11:56:01 ccabral kernel: [    0.144909] Spectre V2 : Mitigation: Full generic retpoline
+Mar 27 11:56:01 ccabral kernel: [    0.145098] Spectre V2 : Spectre v2 / SpectreRSB mitigation: Filling RSB on context switch
+Mar 27 11:56:01 ccabral kernel: [    0.145698] Spectre V2 : Enabling Restricted Speculation for firmware calls
+Mar 27 11:56:01 ccabral kernel: [    0.146105] Spectre V2 : mitigation: Enabling conditional Indirect Branch Prediction Barrier
+Mar 27 11:56:01 ccabral kernel: [    0.147099] Speculative Store Bypass: Mitigation: Speculative Store Bypass disabled via prctl and seccomp
+Mar 27 11:56:01 ccabral kernel: [    0.148201] Freeing SMP alternatives memory: 40K
+Mar 27 11:56:01 ccabral kernel: [    0.148862] TSC deadline timer enabled
+Mar 27 11:56:01 ccabral kernel: [    0.148874] smpboot: CPU0: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz (family: 0x6, model: 0x8e, stepping: 0xa)
+Mar 27 11:56:01 ccabral kernel: [    0.149148] Performance Events: Skylake events, Intel PMU driver.
+Mar 27 11:56:01 ccabral kernel: [    0.149797] ... version:                2
+Mar 27 11:56:01 ccabral kernel: [    0.150100] ... bit width:              48
+Mar 27 11:56:01 ccabral kernel: [    0.150674] ... generic registers:      4
+Mar 27 11:56:01 ccabral kernel: [    0.151099] ... value mask:             0000ffffffffffff
+Mar 27 11:56:01 ccabral kernel: [    0.151705] ... max period:             000000007fffffff
+Mar 27 11:56:01 ccabral kernel: [    0.152099] ... fixed-purpose events:   3
+Mar 27 11:56:01 ccabral kernel: [    0.152676] ... event mask:             000000070000000f
+Mar 27 11:56:01 ccabral kernel: [    0.153123] rcu: Hierarchical SRCU implementation.
+Mar 27 11:56:01 ccabral kernel: [    0.153814] smp: Bringing up secondary CPUs ...
+Mar 27 11:56:01 ccabral kernel: [    0.154146] x86: Booting SMP configuration:
+Mar 27 11:56:01 ccabral kernel: [    0.154726] .... node  #0, CPUs:      #1 #2 #3 #4 #5 #6
+Mar 27 11:56:01 ccabral kernel: [    0.520110] smp: Brought up 1 node, 7 CPUs
+Mar 27 11:56:01 ccabral kernel: [    0.521101] smpboot: Max logical packages: 7
+Mar 27 11:56:01 ccabral kernel: [    0.521685] smpboot: Total of 7 processors activated (25537.99 BogoMIPS)
+Mar 27 11:56:01 ccabral kernel: [    0.522516] devtmpfs: initialized
+Mar 27 11:56:01 ccabral kernel: [    0.523203] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns
+Mar 27 11:56:01 ccabral kernel: [    0.524105] futex hash table entries: 2048 (order: 5, 131072 bytes)
+Mar 27 11:56:01 ccabral kernel: [    0.524883] PM: RTC time: 10:55:57, date: 2019-03-27
+Mar 27 11:56:01 ccabral kernel: [    0.525423] NET: Registered protocol family 16
+Mar 27 11:56:01 ccabral kernel: [    0.526077] audit: initializing netlink subsys (disabled)
+Mar 27 11:56:01 ccabral kernel: [    0.526123] audit: type=2000 audit(1553684157.398:1): state=initialized audit_enabled=0 res=1
+Mar 27 11:56:01 ccabral kernel: [    0.527103] cpuidle: using governor menu
+Mar 27 11:56:01 ccabral kernel: [    0.527722] ACPI: bus type PCI registered
+Mar 27 11:56:01 ccabral kernel: [    0.528154] PCI: Using configuration type 1 for base access
+Mar 27 11:56:01 ccabral kernel: [    0.530140] HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+Mar 27 11:56:01 ccabral kernel: [    0.532154] ACPI: Added _OSI(Module Device)
+Mar 27 11:56:01 ccabral kernel: [    0.533225] ACPI: Added _OSI(Processor Device)
+Mar 27 11:56:01 ccabral kernel: [    0.534156] ACPI: Added _OSI(3.0 _SCP Extensions)
+Mar 27 11:56:01 ccabral kernel: [    0.535108] ACPI: Added _OSI(Processor Aggregator Device)
+Mar 27 11:56:01 ccabral kernel: [    0.536105] ACPI: Added _OSI(Linux-Dell-Video)
+Mar 27 11:56:01 ccabral kernel: [    0.537104] ACPI: Added _OSI(Linux-Lenovo-NV-HDMI-Audio)
+Mar 27 11:56:01 ccabral kernel: [    0.538105] ACPI: Added _OSI(Linux-HPI-Hybrid-Graphics)
+Mar 27 11:56:01 ccabral kernel: [    0.539980] ACPI: 1 ACPI AML tables successfully acquired and loaded
+Mar 27 11:56:01 ccabral kernel: [    0.541005] ACPI: Interpreter enabled
+Mar 27 11:56:01 ccabral kernel: [    0.541114] ACPI: (supports S0 S3 S4 S5)
+Mar 27 11:56:01 ccabral kernel: [    0.542075] ACPI: Using IOAPIC for interrupt routing
+Mar 27 11:56:01 ccabral kernel: [    0.542115] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+Mar 27 11:56:01 ccabral kernel: [    0.543207] ACPI: Enabled 2 GPEs in block 00 to 0F
+Mar 27 11:56:01 ccabral kernel: [    0.546280] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+Mar 27 11:56:01 ccabral kernel: [    0.547104] acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments MSI]
+Mar 27 11:56:01 ccabral kernel: [    0.548013] acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended PCI configuration space under this bridge.
+Mar 27 11:56:01 ccabral kernel: [    0.548123] PCI host bridge to bus 0000:00
+Mar 27 11:56:01 ccabral kernel: [    0.548718] pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+Mar 27 11:56:01 ccabral kernel: [    0.549100] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+Mar 27 11:56:01 ccabral kernel: [    0.549755] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+Mar 27 11:56:01 ccabral kernel: [    0.550100] pci_bus 0000:00: root bus resource [mem 0xc0000000-0xfebfffff window]
+Mar 27 11:56:01 ccabral kernel: [    0.551100] pci_bus 0000:00: root bus resource [mem 0x140000000-0x1bfffffff window]
+Mar 27 11:56:01 ccabral kernel: [    0.552101] pci_bus 0000:00: root bus resource [bus 00-ff]
+Mar 27 11:56:01 ccabral kernel: [    0.552846] pci 0000:00:00.0: [8086:1237] type 00 class 0x060000
+Mar 27 11:56:01 ccabral kernel: [    0.553351] pci 0000:00:01.0: [8086:7000] type 00 class 0x060100
+Mar 27 11:56:01 ccabral kernel: [    0.553724] pci 0000:00:01.1: [8086:7010] type 00 class 0x010180
+Mar 27 11:56:01 ccabral kernel: [    0.558128] pci 0000:00:01.1: reg 0x20: [io  0xc040-0xc04f]
+Mar 27 11:56:01 ccabral kernel: [    0.563312] pci 0000:00:01.1: legacy IDE quirk: reg 0x10: [io  0x01f0-0x01f7]
+Mar 27 11:56:01 ccabral kernel: [    0.564107] pci 0000:00:01.1: legacy IDE quirk: reg 0x14: [io  0x03f6]
+Mar 27 11:56:01 ccabral kernel: [    0.565106] pci 0000:00:01.1: legacy IDE quirk: reg 0x18: [io  0x0170-0x0177]
+Mar 27 11:56:01 ccabral kernel: [    0.566106] pci 0000:00:01.1: legacy IDE quirk: reg 0x1c: [io  0x0376]
+Mar 27 11:56:01 ccabral kernel: [    0.567305] pci 0000:00:01.3: [8086:7113] type 00 class 0x068000
+Mar 27 11:56:01 ccabral kernel: [    0.567733] pci 0000:00:01.3: quirk: [io  0x0600-0x063f] claimed by PIIX4 ACPI
+Mar 27 11:56:01 ccabral kernel: [    0.568114] pci 0000:00:01.3: quirk: [io  0x0700-0x070f] claimed by PIIX4 SMB
+Mar 27 11:56:01 ccabral kernel: [    0.569363] pci 0000:00:02.0: [1234:1111] type 00 class 0x030000
+Mar 27 11:56:01 ccabral kernel: [    0.571111] pci 0000:00:02.0: reg 0x10: [mem 0xfd000000-0xfdffffff pref]
+Mar 27 11:56:01 ccabral kernel: [    0.575106] pci 0000:00:02.0: reg 0x18: [mem 0xfebf0000-0xfebf0fff]
+Mar 27 11:56:01 ccabral kernel: [    0.583107] pci 0000:00:02.0: reg 0x30: [mem 0xfebe0000-0xfebeffff pref]
+Mar 27 11:56:01 ccabral kernel: [    0.583256] pci 0000:00:03.0: [8086:100e] type 00 class 0x020000
+Mar 27 11:56:01 ccabral kernel: [    0.583732] pci 0000:00:03.0: reg 0x10: [mem 0xfebc0000-0xfebdffff]
+Mar 27 11:56:01 ccabral kernel: [    0.584101] pci 0000:00:03.0: reg 0x14: [io  0xc000-0xc03f]
+Mar 27 11:56:01 ccabral kernel: [    0.586712] pci 0000:00:03.0: reg 0x30: [mem 0xfeb80000-0xfebbffff pref]
+Mar 27 11:56:01 ccabral kernel: [    0.587143] ACPI: PCI Interrupt Link [LNKA] (IRQs 5 *10 11)
+Mar 27 11:56:01 ccabral kernel: [    0.588176] ACPI: PCI Interrupt Link [LNKB] (IRQs 5 *10 11)
+Mar 27 11:56:01 ccabral kernel: [    0.588873] ACPI: PCI Interrupt Link [LNKC] (IRQs 5 10 *11)
+Mar 27 11:56:01 ccabral kernel: [    0.589584] ACPI: PCI Interrupt Link [LNKD] (IRQs 5 10 *11)
+Mar 27 11:56:01 ccabral kernel: [    0.590469] ACPI: PCI Interrupt Link [LNKS] (IRQs *9)
+Mar 27 11:56:01 ccabral kernel: [    0.593238] pci 0000:00:02.0: vgaarb: setting as boot VGA device
+Mar 27 11:56:01 ccabral kernel: [    0.594097] pci 0000:00:02.0: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+Mar 27 11:56:01 ccabral kernel: [    0.594109] pci 0000:00:02.0: vgaarb: bridge control possible
+Mar 27 11:56:01 ccabral kernel: [    0.595107] vgaarb: loaded
+Mar 27 11:56:01 ccabral kernel: [    0.596226] SCSI subsystem initialized
+Mar 27 11:56:01 ccabral kernel: [    0.597319] libata version 3.00 loaded.
+Mar 27 11:56:01 ccabral kernel: [    0.597319] ACPI: bus type USB registered
+Mar 27 11:56:01 ccabral kernel: [    0.598121] usbcore: registered new interface driver usbfs
+Mar 27 11:56:01 ccabral kernel: [    0.599112] usbcore: registered new interface driver hub
+Mar 27 11:56:01 ccabral kernel: [    0.600303] usbcore: registered new device driver usb
+Mar 27 11:56:01 ccabral kernel: [    0.601122] pps_core: LinuxPPS API ver. 1 registered
+Mar 27 11:56:01 ccabral kernel: [    0.602101] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+Mar 27 11:56:01 ccabral kernel: [    0.603104] PTP clock support registered
+Mar 27 11:56:01 ccabral kernel: [    0.604227] EDAC MC: Ver: 3.0.0
+Mar 27 11:56:01 ccabral kernel: [    0.605232] Advanced Linux Sound Architecture Driver Initialized.
+Mar 27 11:56:01 ccabral kernel: [    0.606110] PCI: Using ACPI for IRQ routing
+Mar 27 11:56:01 ccabral kernel: [    0.606885] PCI: pci_cache_line_size set to 64 bytes
+Mar 27 11:56:01 ccabral kernel: [    0.606947] e820: reserve RAM buffer [mem 0x0009fc00-0x0009ffff]
+Mar 27 11:56:01 ccabral kernel: [    0.606948] e820: reserve RAM buffer [mem 0xbffdf000-0xbfffffff]
+Mar 27 11:56:01 ccabral kernel: [    0.607027] NetLabel: Initializing
+Mar 27 11:56:01 ccabral kernel: [    0.607101] NetLabel:  domain hash size = 128
+Mar 27 11:56:01 ccabral kernel: [    0.607881] NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+Mar 27 11:56:01 ccabral kernel: [    0.608114] NetLabel:  unlabeled traffic allowed by default
+Mar 27 11:56:01 ccabral kernel: [    0.608960] hpet0: at MMIO 0xfed00000, IRQs 2, 8, 0
+Mar 27 11:56:01 ccabral kernel: [    0.609101] hpet0: 3 comparators, 64-bit 100.000000 MHz counter
+Mar 27 11:56:01 ccabral kernel: [    0.612179] clocksource: Switched to clocksource tsc-early
+Mar 27 11:56:01 ccabral kernel: [    0.706673] VFS: Disk quotas dquot_6.6.0
+Mar 27 11:56:01 ccabral kernel: [    0.707579] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+Mar 27 11:56:01 ccabral kernel: [    0.708429] *** VALIDATE hugetlbfs ***
+Mar 27 11:56:01 ccabral kernel: [    0.709192] pnp: PnP ACPI init
+Mar 27 11:56:01 ccabral kernel: [    0.709942] pnp 00:00: Plug and Play ACPI device, IDs PNP0b00 (active)
+Mar 27 11:56:01 ccabral kernel: [    0.709968] pnp 00:01: Plug and Play ACPI device, IDs PNP0303 (active)
+Mar 27 11:56:01 ccabral kernel: [    0.709985] pnp 00:02: Plug and Play ACPI device, IDs PNP0f13 (active)
+Mar 27 11:56:01 ccabral kernel: [    0.709991] pnp 00:03: [dma 2]
+Mar 27 11:56:01 ccabral kernel: [    0.709998] pnp 00:03: Plug and Play ACPI device, IDs PNP0700 (active)
+Mar 27 11:56:01 ccabral kernel: [    0.710038] pnp 00:04: Plug and Play ACPI device, IDs PNP0400 (active)
+Mar 27 11:56:01 ccabral kernel: [    0.710067] pnp 00:05: Plug and Play ACPI device, IDs PNP0501 (active)
+Mar 27 11:56:01 ccabral kernel: [    0.710220] pnp: PnP ACPI: found 6 devices
+Mar 27 11:56:01 ccabral kernel: [    0.718162] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+Mar 27 11:56:01 ccabral kernel: [    0.719286] pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+Mar 27 11:56:01 ccabral kernel: [    0.719287] pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+Mar 27 11:56:01 ccabral kernel: [    0.719288] pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+Mar 27 11:56:01 ccabral kernel: [    0.719289] pci_bus 0000:00: resource 7 [mem 0xc0000000-0xfebfffff window]
+Mar 27 11:56:01 ccabral kernel: [    0.719290] pci_bus 0000:00: resource 8 [mem 0x140000000-0x1bfffffff window]
+Mar 27 11:56:01 ccabral kernel: [    0.719323] NET: Registered protocol family 2
+Mar 27 11:56:01 ccabral kernel: [    0.719997] tcp_listen_portaddr_hash hash table entries: 2048 (order: 3, 32768 bytes)
+Mar 27 11:56:01 ccabral kernel: [    0.721092] TCP established hash table entries: 32768 (order: 6, 262144 bytes)
+Mar 27 11:56:01 ccabral kernel: [    0.722401] TCP bind hash table entries: 32768 (order: 7, 524288 bytes)
+Mar 27 11:56:01 ccabral kernel: [    0.723134] TCP: Hash tables configured (established 32768 bind 32768)
+Mar 27 11:56:01 ccabral kernel: [    0.723806] UDP hash table entries: 2048 (order: 4, 65536 bytes)
+Mar 27 11:56:01 ccabral kernel: [    0.724455] UDP-Lite hash table entries: 2048 (order: 4, 65536 bytes)
+Mar 27 11:56:01 ccabral kernel: [    0.725145] NET: Registered protocol family 1
+Mar 27 11:56:01 ccabral kernel: [    0.726065] RPC: Registered named UNIX socket transport module.
+Mar 27 11:56:01 ccabral kernel: [    0.726711] RPC: Registered udp transport module.
+Mar 27 11:56:01 ccabral kernel: [    0.727313] RPC: Registered tcp transport module.
+Mar 27 11:56:01 ccabral kernel: [    0.727909] RPC: Registered tcp NFSv4.1 backchannel transport module.
+Mar 27 11:56:01 ccabral kernel: [    0.728721] pci 0000:00:01.0: PIIX3: Enabling Passive Release
+Mar 27 11:56:01 ccabral kernel: [    0.729357] pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+Mar 27 11:56:01 ccabral kernel: [    0.729991] pci 0000:00:01.0: Activating ISA DMA hang workarounds
+Mar 27 11:56:01 ccabral kernel: [    0.730656] pci 0000:00:02.0: Video device with shadowed ROM at [mem 0x000c0000-0x000dffff]
+Mar 27 11:56:01 ccabral kernel: [    0.731750] PCI: CLS 0 bytes, default 64
+Mar 27 11:56:01 ccabral kernel: [    0.731784] PCI-DMA: Using software bounce buffering for IO (SWIOTLB)
+Mar 27 11:56:01 ccabral kernel: [    0.732444] software IO TLB: mapped [mem 0xbbfdf000-0xbffdf000] (64MB)
+Mar 27 11:56:01 ccabral kernel: [    0.746977] check: Scanning for low memory corruption every 60 seconds
+Mar 27 11:56:01 ccabral kernel: [    0.752605] Initialise system trusted keyrings
+Mar 27 11:56:01 ccabral kernel: [    0.754521] workingset: timestamp_bits=56 max_order=20 bucket_order=0
+Mar 27 11:56:01 ccabral kernel: [    0.758899] NFS: Registering the id_resolver key type
+Mar 27 11:56:01 ccabral kernel: [    0.760180] Key type id_resolver registered
+Mar 27 11:56:01 ccabral kernel: [    0.761388] Key type id_legacy registered
+Mar 27 11:56:01 ccabral kernel: [    0.764517] cryptomgr_test (61) used greatest stack depth: 15448 bytes left
+Mar 27 11:56:01 ccabral kernel: [    0.765904] kworker/u14:0 (63) used greatest stack depth: 14528 bytes left
+Mar 27 11:56:01 ccabral kernel: [    0.769166] kworker/u14:0 (93) used greatest stack depth: 14080 bytes left
+Mar 27 11:56:01 ccabral kernel: [    0.771941] Key type asymmetric registered
+Mar 27 11:56:01 ccabral kernel: [    0.773211] Asymmetric key parser 'x509' registered
+Mar 27 11:56:01 ccabral kernel: [    0.774235] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 251)
+Mar 27 11:56:01 ccabral kernel: [    0.775991] io scheduler mq-deadline registered
+Mar 27 11:56:01 ccabral kernel: [    0.776976] io scheduler kyber registered
+Mar 27 11:56:01 ccabral kernel: [    0.778360] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+Mar 27 11:56:01 ccabral kernel: [    0.779865] ACPI: Power Button [PWRF]
+Mar 27 11:56:01 ccabral kernel: [    0.781121] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+Mar 27 11:56:01 ccabral kernel: [    0.805068] 00:05: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+Mar 27 11:56:01 ccabral kernel: [    0.806725] Non-volatile memory driver v1.3
+Mar 27 11:56:01 ccabral kernel: [    0.807427] Linux agpgart interface v0.103
+Mar 27 11:56:01 ccabral kernel: [    0.810016] loop: module loaded
+Mar 27 11:56:01 ccabral kernel: [    0.815578] ata_piix 0000:00:01.1: version 2.13
+Mar 27 11:56:01 ccabral kernel: [    0.820331] scsi host0: ata_piix
+Mar 27 11:56:01 ccabral kernel: [    0.826342] scsi host1: ata_piix
+Mar 27 11:56:01 ccabral kernel: [    0.828142] ata1: PATA max MWDMA2 cmd 0x1f0 ctl 0x3f6 bmdma 0xc040 irq 14
+Mar 27 11:56:01 ccabral kernel: [    0.829799] ata2: PATA max MWDMA2 cmd 0x170 ctl 0x376 bmdma 0xc048 irq 15
+Mar 27 11:56:01 ccabral kernel: [    0.831684] e100: Intel(R) PRO/100 Network Driver, 3.5.24-k2-NAPI
+Mar 27 11:56:01 ccabral kernel: [    0.833361] e100: Copyright(c) 1999-2006 Intel Corporation
+Mar 27 11:56:01 ccabral kernel: [    0.834712] e1000: Intel(R) PRO/1000 Network Driver - version 7.3.21-k8-NAPI
+Mar 27 11:56:01 ccabral kernel: [    0.836004] e1000: Copyright (c) 1999-2006 Intel Corporation.
+Mar 27 11:56:01 ccabral kernel: [    0.855504] PCI Interrupt Link [LNKC] enabled at IRQ 11
+Mar 27 11:56:01 ccabral kernel: [    0.993486] ata1.01: NODEV after polling detection
+Mar 27 11:56:01 ccabral kernel: [    0.993786] ata1.00: ATA-7: QEMU HARDDISK, 2.5+, max UDMA/100
+Mar 27 11:56:01 ccabral kernel: [    0.994437] ata1.00: 100663296 sectors, multi 16: LBA48 
+Mar 27 11:56:01 ccabral kernel: [    0.995491] scsi 0:0:0:0: Direct-Access     ATA      QEMU HARDDISK    2.5+ PQ: 0 ANSI: 5
+Mar 27 11:56:01 ccabral kernel: [    0.996958] sd 0:0:0:0: Attached scsi generic sg0 type 0
+Mar 27 11:56:01 ccabral kernel: [    0.996965] sd 0:0:0:0: [sda] 100663296 512-byte logical blocks: (51.5 GB/48.0 GiB)
+Mar 27 11:56:01 ccabral kernel: [    0.997615] ata2.01: NODEV after polling detection
+Mar 27 11:56:01 ccabral kernel: [    0.998707] sd 0:0:0:0: [sda] Write Protect is off
+Mar 27 11:56:01 ccabral kernel: [    0.998963] ata2.00: ATAPI: QEMU DVD-ROM, 2.5+, max UDMA/100
+Mar 27 11:56:01 ccabral kernel: [    0.999334] sd 0:0:0:0: [sda] Mode Sense: 00 3a 00 00
+Mar 27 11:56:01 ccabral kernel: [    0.999960] sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+Mar 27 11:56:01 ccabral kernel: [    1.001161] sd 0:0:0:0: [sda] Optimal transfer size 0 bytes < PAGE_SIZE (4096 bytes)
+Mar 27 11:56:01 ccabral kernel: [    1.002418] scsi 1:0:0:0: CD-ROM            QEMU     QEMU DVD-ROM     2.5+ PQ: 0 ANSI: 5
+Mar 27 11:56:01 ccabral kernel: [    1.023329]  sda: sda1 sda2 sda3 sda4
+Mar 27 11:56:01 ccabral kernel: [    1.026234] sd 0:0:0:0: [sda] Attached SCSI disk
+Mar 27 11:56:01 ccabral kernel: [    1.184121] sr 1:0:0:0: [sr0] scsi3-mmc drive: 4x/4x cd/rw xa/form2 tray
+Mar 27 11:56:01 ccabral kernel: [    1.184786] cdrom: Uniform CD-ROM driver Revision: 3.20
+Mar 27 11:56:01 ccabral kernel: [    1.185680] sr 1:0:0:0: Attached scsi CD-ROM sr0
+Mar 27 11:56:01 ccabral kernel: [    1.185821] sr 1:0:0:0: Attached scsi generic sg1 type 5
+Mar 27 11:56:01 ccabral kernel: [    1.223069] e1000 0000:00:03.0 eth0: (PCI:33MHz:32-bit) 52:54:00:12:34:56
+Mar 27 11:56:01 ccabral kernel: [    1.224383] e1000 0000:00:03.0 eth0: Intel(R) PRO/1000 Network Connection
+Mar 27 11:56:01 ccabral kernel: [    1.225822] e1000e: Intel(R) PRO/1000 Network Driver - 3.2.6-k
+Mar 27 11:56:01 ccabral kernel: [    1.226867] e1000e: Copyright(c) 1999 - 2015 Intel Corporation.
+Mar 27 11:56:01 ccabral kernel: [    1.227832] sky2: driver version 1.30
+Mar 27 11:56:01 ccabral kernel: [    1.228874] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+Mar 27 11:56:01 ccabral kernel: [    1.229780] ehci-pci: EHCI PCI platform driver
+Mar 27 11:56:01 ccabral kernel: [    1.230625] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+Mar 27 11:56:01 ccabral kernel: [    1.231503] ohci-pci: OHCI PCI platform driver
+Mar 27 11:56:01 ccabral kernel: [    1.232347] uhci_hcd: USB Universal Host Controller Interface driver
+Mar 27 11:56:01 ccabral kernel: [    1.233136] usbcore: registered new interface driver usblp
+Mar 27 11:56:01 ccabral kernel: [    1.234090] usbcore: registered new interface driver usb-storage
+Mar 27 11:56:01 ccabral kernel: [    1.234865] i8042: PNP: PS/2 Controller [PNP0303:KBD,PNP0f13:MOU] at 0x60,0x64 irq 1,12
+Mar 27 11:56:01 ccabral kernel: [    1.236888] serio: i8042 KBD port at 0x60,0x64 irq 1
+Mar 27 11:56:01 ccabral kernel: [    1.237601] serio: i8042 AUX port at 0x60,0x64 irq 12
+Mar 27 11:56:01 ccabral kernel: [    1.238532] rtc_cmos 00:00: RTC can wake from S4
+Mar 27 11:56:01 ccabral kernel: [    1.239482] rtc_cmos 00:00: registered as rtc0
+Mar 27 11:56:01 ccabral kernel: [    1.240135] rtc_cmos 00:00: alarms up to one day, y3k, 114 bytes nvram, hpet irqs
+Mar 27 11:56:01 ccabral kernel: [    1.241272] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input1
+Mar 27 11:56:01 ccabral kernel: [    1.242701] device-mapper: ioctl: 4.40.0-ioctl (2019-01-18) initialised: dm-devel@redhat.com
+Mar 27 11:56:01 ccabral kernel: [    1.243828] intel_pstate: CPU ID not supported
+Mar 27 11:56:01 ccabral kernel: [    1.244464] hidraw: raw HID events driver (C) Jiri Kosina
+Mar 27 11:56:01 ccabral kernel: [    1.245276] usbcore: registered new interface driver usbhid
+Mar 27 11:56:01 ccabral kernel: [    1.245910] usbhid: USB HID core driver
+Mar 27 11:56:01 ccabral kernel: [    1.250186] Initializing XFRM netlink socket
+Mar 27 11:56:01 ccabral kernel: [    1.258596] NET: Registered protocol family 10
+Mar 27 11:56:01 ccabral kernel: [    1.263436] Segment Routing with IPv6
+Mar 27 11:56:01 ccabral kernel: [    1.266276] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+Mar 27 11:56:01 ccabral kernel: [    1.267968] NET: Registered protocol family 17
+Mar 27 11:56:01 ccabral kernel: [    1.269209] Key type dns_resolver registered
+Mar 27 11:56:01 ccabral kernel: [    1.271498] sched_clock: Marking stable (1201947527, 69491486)->(1517170270, -245731257)
+Mar 27 11:56:01 ccabral kernel: [    1.274421] registered taskstats version 1
+Mar 27 11:56:01 ccabral kernel: [    1.275401] Loading compiled-in X.509 certificates
+Mar 27 11:56:01 ccabral kernel: [    1.276612] PM:   Magic number: 11:959:932
+Mar 27 11:56:01 ccabral kernel: [    1.277575] printk: console [netcon0] enabled
+Mar 27 11:56:01 ccabral kernel: [    1.278401] netconsole: network logging started
+Mar 27 11:56:01 ccabral kernel: [    1.279312] cfg80211: Loading compiled-in X.509 certificates for regulatory database
+Mar 27 11:56:01 ccabral kernel: [    1.281741] cfg80211: Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+Mar 27 11:56:01 ccabral kernel: [    1.282665] platform regulatory.0: Direct firmware load for regulatory.db failed with error -2
+Mar 27 11:56:01 ccabral kernel: [    1.284119] cfg80211: failed to load regulatory.db
+Mar 27 11:56:01 ccabral kernel: [    1.284265] ALSA device list:
+Mar 27 11:56:01 ccabral kernel: [    1.285637]   No soundcards found.
+Mar 27 11:56:01 ccabral kernel: [    1.759397] tsc: Refined TSC clocksource calibration: 1799.994 MHz
+Mar 27 11:56:01 ccabral kernel: [    1.762039] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x19f223e7522, max_idle_ns: 440795275847 ns
+Mar 27 11:56:01 ccabral kernel: [    1.765328] clocksource: Switched to clocksource tsc
+Mar 27 11:56:01 ccabral kernel: [    1.885332] input: ImExPS/2 Generic Explorer Mouse as /devices/platform/i8042/serio1/input/input3
+Mar 27 11:56:01 ccabral kernel: [    1.890303] md: Waiting for all devices to be available before autodetect
+Mar 27 11:56:01 ccabral kernel: [    1.892939] md: If you don't use raid, use raid=noautodetect
+Mar 27 11:56:01 ccabral kernel: [    1.896527] md: Autodetecting RAID arrays.
+Mar 27 11:56:01 ccabral kernel: [    1.898838] md: autorun ...
+Mar 27 11:56:01 ccabral kernel: [    1.900994] md: ... autorun DONE.
+Mar 27 11:56:01 ccabral kernel: [    1.913583] EXT4-fs (sda3): mounted filesystem with ordered data mode. Opts: (null)
+Mar 27 11:56:01 ccabral kernel: [    1.918443] VFS: Mounted root (ext4 filesystem) readonly on device 8:3.
+Mar 27 11:56:01 ccabral kernel: [    1.925379] devtmpfs: mounted
+Mar 27 11:56:01 ccabral kernel: [    1.928667] Freeing unused kernel image memory: 1276K
+Mar 27 11:56:01 ccabral kernel: [    1.935281] Write protecting the kernel read-only data: 20480k
+Mar 27 11:56:01 ccabral kernel: [    1.939611] Freeing unused kernel image memory: 2008K
+Mar 27 11:56:01 ccabral kernel: [    1.942929] Freeing unused kernel image memory: 1016K
+Mar 27 11:56:01 ccabral kernel: [    1.945927] Run /sbin/init as init process
+Mar 27 11:56:01 ccabral kernel: [    2.005244] stty (142) used greatest stack depth: 13352 bytes left
+Mar 27 11:56:01 ccabral kernel: [    2.020871] dmesg (143) used greatest stack depth: 13312 bytes left
+Mar 27 11:56:01 ccabral kernel: [    2.102688] random: fast init done
+Mar 27 11:56:01 ccabral kernel: [    2.126156] ip (204) used greatest stack depth: 12352 bytes left
+Mar 27 11:56:01 ccabral kernel: <30>[    2.149619] udevd[234]: starting version 3.2.5
+Mar 27 11:56:01 ccabral kernel: [    2.152177] random: udevd: uninitialized urandom read (16 bytes read)
+Mar 27 11:56:01 ccabral kernel: [    2.153349] random: udevd: uninitialized urandom read (16 bytes read)
+Mar 27 11:56:01 ccabral kernel: [    2.154625] random: udevd: uninitialized urandom read (16 bytes read)
+Mar 27 11:56:01 ccabral kernel: <30>[    2.164606] udevd[235]: starting eudev-3.2.5
+Mar 27 11:56:01 ccabral kernel: [    2.208255] e1000 0000:00:03.0 enp0s3: renamed from eth0
+Mar 27 11:56:01 ccabral kernel: [    2.712890] Adding 3145724k swap on /dev/sda4.  Priority:1 extents:1 across:3145724k 
+Mar 27 11:56:01 ccabral kernel: [    2.763803] EXT4-fs (sda3): re-mounted. Opts: (null)
+Mar 27 11:56:01 ccabral kernel: [    2.879541] EXT4-fs (sda3): re-mounted. Opts: (null)
+Mar 27 11:56:01 ccabral kernel: [    2.929496] EXT4-fs (sda2): mounted filesystem with ordered data mode. Opts: (null)
+Mar 27 11:56:01 ccabral kernel: [    3.636480] urandom_read: 4 callbacks suppressed
+Mar 27 11:56:01 ccabral kernel: [    3.636482] random: udevd: uninitialized urandom read (16 bytes read)
+Mar 27 11:56:01 ccabral kernel: [    3.643214] random: udevd: uninitialized urandom read (16 bytes read)
+Mar 27 11:56:01 ccabral kernel: [    3.643260] random: udevd: uninitialized urandom read (16 bytes read)
+Mar 27 11:56:01 ccabral kernel: [    3.695082] random: crng init done
+Mar 27 11:56:01 ccabral kernel: [    3.887635] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+Mar 27 11:56:01 ccabral kernel: [    3.889261] IPv6: ADDRCONF(NETDEV_CHANGE): enp0s3: link becomes ready
