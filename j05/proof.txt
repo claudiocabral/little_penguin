@@ -1,0 +1,17 @@
+ccabral# insmod hello.ko
+ccabral# cat /dev/fortytwo 
+ccabral#                                                                                                 ccabral# echo -n ccabral > /dev/fortytwo 
+ccabral# echo -n batata > /dev/fortytwo        
+echo: write error: invalid argument
+ccabral# rmmod hello 
+ccabral# dmesg | tail
+[    2.435426] random: crng init done
+[    2.435429] random: 4 urandom warning(s) missed due to ratelimiting
+[    2.474327] EXT4-fs (sda3): re-mounted. Opts: (null)
+[    2.503480] EXT4-fs (sda2): mounted filesystem with ordered data mode. Opts: (null)
+[    3.318652] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+[    3.322699] IPv6: ADDRCONF(NETDEV_UP): enp0s3: link is not ready
+[    3.324660] IPv6: ADDRCONF(NETDEV_CHANGE): enp0s3: link becomes ready
+[  145.546631] hello: loading out-of-tree module taints kernel.
+[  145.550241] Hello World !
+[  193.305886] Cleaning up module.
