@@ -31,16 +31,17 @@ ssize_t hello_read(struct file *filp, char __user *buf, size_t count,
 ssize_t hello_write(struct file *filp, const char __user *buf, size_t count,
 		loff_t *f_pos)
 {
-	char internal_buffer[NAME_SIZE + 1];
+	char internal_buffer[NAME_SIZE];
 
-	if (count > NAME_SIZE)
+	if (count > NAME_SIZE - *f_pos)
 		return -EINVAL;
-	memset(internal_buffer, 0, NAME_SIZE + 1);
-	if (copy_from_user(internal_buffer, buf, count)!= 0)
+	if (copy_from_user(internal_buffer, buf, count) != 0)
 		return -EINVAL;
-	return strncmp(internal_buffer, name, NAME_SIZE) == 0
-		? NAME_SIZE
-		: -EINVAL;
+	if (strncmp(internal_buffer, name + *f_pos, count) == 0) {
+		*f_pos += count;
+		return count;
+	}
+	return -EINVAL;
 }
 
 static const struct file_operations hello_fops = {
