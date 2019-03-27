@@ -12,7 +12,6 @@ MODULE_DESCRIPTION("This module talks to Morty");
 static const char *name = "ccabral";
 
 #define NAME_SIZE (sizeof(name) - 1)
-//#define NAME_SIZE (strlen(name))
 
 ssize_t hello_read(struct file *filp, char __user *buf, size_t count,
 		loff_t *f_pos)
