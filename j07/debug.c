@@ -41,7 +41,7 @@ ssize_t id_read(struct file *filp, char __user *buf, size_t count,
 }
 
 ssize_t id_write(struct file *filp, const char __user *buf, size_t count,
-		loff_t *f_pos)
+		 loff_t *f_pos)
 {
 	char internal_buffer[NAME_SIZE];
 
@@ -57,19 +57,19 @@ ssize_t id_write(struct file *filp, const char __user *buf, size_t count,
 }
 
 ssize_t foo_read(struct file *filp, char __user *buf, size_t count,
-		loff_t *f_pos)
+		 loff_t *f_pos)
 {
 	ssize_t ret;
 
 	read_lock(&foo_lock);
 	ret = simple_read_from_buffer(buf, count, f_pos,
-			g_buffer, sizeof(g_buffer));
+				      g_buffer, sizeof(g_buffer));
 	read_unlock(&foo_lock);
 	return ret;
 }
 
 ssize_t foo_write(struct file *filp, const char __user *buf, size_t count,
-		loff_t *f_pos)
+		  loff_t *f_pos)
 {
 	ssize_t i;
 	ssize_t tmp;
@@ -115,16 +115,16 @@ static __init int init_debug(void)
 
 	memset(g_buffer, 0, sizeof(g_buffer));
 	fs[FOLDER] = debugfs_create_dir("fortytwo", NULL);
-	if (fs[FOLDER] == NULL || fs[FOLDER] == ERR_PTR(-ENODEV))
+	if (!fs[FOLDER] || fs[FOLDER] == ERR_PTR(-ENODEV))
 		return -ENODEV;
 	fs[ID] = debugfs_create_file("id",
-			0666, fs[FOLDER], NULL, &fops[ID]);
+				     0666, fs[FOLDER], NULL, &fops[ID]);
 	fs[JIFFIES] = debugfs_create_size_t("jiffies", 0444,
-			fs[FOLDER], (size_t *)&jiffies);
+					    fs[FOLDER], (size_t *)&jiffies);
 	fs[FOO] = debugfs_create_file_size("foo",
-			0644, fs[FOLDER], NULL, &fops[FOO], PAGE_SIZE);
+					   0644, fs[FOLDER], NULL, &fops[FOO], PAGE_SIZE);
 	for (i = 0; i < FS_SIZE; ++i) {
-		if (fs[i] == ERR_PTR(-ENODEV) || fs[i] == NULL) {
+		if (fs[i] == ERR_PTR(-ENODEV) || !fs[i]) {
 			debugfs_remove_recursive(fs[FOLDER]);
 			for (i = 0; i < FS_SIZE; ++i)
 				fs[i] = NULL;
