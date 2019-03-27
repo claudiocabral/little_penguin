@@ -1,0 +1,11 @@
+ACTION=="add", \
+SUBSYSTEM=="input", \
+ENV{ID_BUS}="usb", \
+ENV{ID_INPUT_KEYBOARD}="1", \
+RUN+="/sbin/insmod /root/little_penguin/j04/hello.ko"
+
+ACTION=="remove", \
+SUBSYSTEM=="input", \
+ENV{ID_BUS}="usb", \
+ENV{ID_INPUT_KEYBOARD}="1", \
+RUN+="/sbin/rmmod hello.ko"
