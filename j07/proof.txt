@@ -1,0 +1,16 @@
+ccabral# cat /sys/kernel/debug/fortytwo/id
+ccabral#                                                                                                 
+ccabral# echo -n ccabral > /sys/kernel/debug/fortytwo/id 
+ccabral# echo -n batata > /sys/kernel/debug/fortytwo/id       
+echo: write error: invalid argument
+ccabral# cat /sys/kernel/debug/fortytwo/jiffies 
+4295199952
+ccabral# echo ohmondieu > /sys/kernel/debug/fortytwo/foo 
+ccabral# cat /sys/kernel/debug/fortytwo/foo
+ohmondieu
+ccabral# ls -l /sys/kernel/debug/fortytwo 
+total 0
+-rw-r--r-- 1 root root 0 Mar 27 13:24 foo
+-rw-rw-rw- 1 root root 0 Mar 27 13:23 id
+-r--r--r-- 1 root root 0 Mar 27 13:23 jiffies
+
