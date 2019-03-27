@@ -14,7 +14,7 @@ static const char *name = "ccabral";
 #define NAME_SIZE (sizeof(name) - 1)
 
 ssize_t hello_read(struct file *filp, char __user *buf, size_t count,
-		loff_t *f_pos)
+		   loff_t *f_pos)
 {
 	ssize_t size = NAME_SIZE - *f_pos;
 
@@ -28,7 +28,7 @@ ssize_t hello_read(struct file *filp, char __user *buf, size_t count,
 }
 
 ssize_t hello_write(struct file *filp, const char __user *buf, size_t count,
-		loff_t *f_pos)
+		    loff_t *f_pos)
 {
 	char internal_buffer[NAME_SIZE];
 

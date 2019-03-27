@@ -89,10 +89,8 @@ static const struct file_operations fops = {
 	.release = seq_release
 };
 
-
 static __init int init_debug(void)
 {
-
 	g_file = proc_create("mymounts", 0444, NULL, &fops);
 	if (!g_file)
 		return -ENODEV;
