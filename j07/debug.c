@@ -117,12 +117,12 @@ static __init int init_debug(void)
 	fs[FOLDER] = debugfs_create_dir("fortytwo", NULL);
 	if (!fs[FOLDER] || fs[FOLDER] == ERR_PTR(-ENODEV))
 		return -ENODEV;
-	fs[ID] = debugfs_create_file("id",
-				     0666, fs[FOLDER], NULL, &fops[ID]);
+	fs[ID] = debugfs_create_file("id", 0666, fs[FOLDER],
+				     NULL, &fops[ID]);
 	fs[JIFFIES] = debugfs_create_size_t("jiffies", 0444,
 					    fs[FOLDER], (size_t *)&jiffies);
-	fs[FOO] = debugfs_create_file_size("foo",
-					   0644, fs[FOLDER], NULL, &fops[FOO], PAGE_SIZE);
+	fs[FOO] = debugfs_create_file_size("foo", 0644, fs[FOLDER],
+					   NULL, &fops[FOO], PAGE_SIZE);
 	for (i = 0; i < FS_SIZE; ++i) {
 		if (fs[i] == ERR_PTR(-ENODEV) || !fs[i]) {
 			debugfs_remove_recursive(fs[FOLDER]);
