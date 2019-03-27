@@ -22,6 +22,7 @@ DEFINE_RWLOCK(foo_lock);
 
 static const char *name = "ccabral";
 static char g_buffer[PAGE_SIZE];
+static ssize_t g_buffer_size;
 
 #define NAME_SIZE (sizeof(name) - 1)
 
@@ -70,15 +71,28 @@ ssize_t foo_read(struct file *filp, char __user *buf, size_t count,
 ssize_t foo_write(struct file *filp, const char __user *buf, size_t count,
 		loff_t *f_pos)
 {
-	ssize_t ret;
+	ssize_t i;
+	ssize_t tmp;
 
 	write_lock(&foo_lock);
-	pr_info("writing\n");
-	ret = simple_write_to_buffer(g_buffer,
-			sizeof(g_buffer), f_pos, buf, count);
-	pr_info("done writing\n");
+	i = 0;
+	while (count > PAGE_SIZE) {
+		tmp = simple_write_to_buffer(g_buffer, PAGE_SIZE, f_pos,
+					     buf, PAGE_SIZE);
+		if (tmp <= 0)
+			goto ret;
+		i += tmp;
+		*f_pos = 0;
+		count -= PAGE_SIZE;
+	}
+	tmp = simple_write_to_buffer(g_buffer, PAGE_SIZE, f_pos, buf, count);
+	if (tmp <= 0)
+		goto ret;
+	g_buffer_size = tmp;
+	tmp += i;
+ret:
 	write_unlock(&foo_lock);
-	return ret;
+	return tmp;
 }
 
 static struct dentry *fs[4];
