@@ -78,19 +78,22 @@ ssize_t foo_write(struct file *filp, const char __user *buf, size_t count,
 	i = 0;
 	while (count > PAGE_SIZE) {
 		tmp = simple_write_to_buffer(g_buffer, PAGE_SIZE, f_pos,
-					     buf, PAGE_SIZE);
+					     buf + i, PAGE_SIZE - *f_pos);
+		pr_info("i: %ld\n tmp: %ld\nf_pos: %lld\n", i, tmp, *f_pos);
 		if (tmp <= 0)
 			goto ret;
+		count -= tmp;
 		i += tmp;
 		*f_pos = 0;
-		count -= PAGE_SIZE;
 	}
-	tmp = simple_write_to_buffer(g_buffer, PAGE_SIZE, f_pos, buf, count);
+	tmp = simple_write_to_buffer(g_buffer,
+				     PAGE_SIZE, f_pos, buf + i, count);
 	if (tmp <= 0)
 		goto ret;
 	g_buffer_size = tmp;
 	tmp += i;
 ret:
+	*f_pos %= PAGE_SIZE;
 	write_unlock(&foo_lock);
 	return tmp;
 }

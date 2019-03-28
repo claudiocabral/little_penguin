@@ -74,12 +74,12 @@ static ssize_t reverse_write(struct file *fp, const char __user *user,
 	i = 0;
 	while (size > PAGE_SIZE) {
 		tmp = simple_write_to_buffer(str, PAGE_SIZE, offs,
-					     user, PAGE_SIZE);
+					     user + i, PAGE_SIZE - *offs);
 		if (tmp <= 0)
 			goto ret;
+		size -= tmp;
 		i += tmp;
 		*offs = 0;
-		size -= PAGE_SIZE;
 	}
 	tmp = simple_write_to_buffer(str, PAGE_SIZE, offs, user, size);
 	if (tmp <= 0)
@@ -87,6 +87,7 @@ static ssize_t reverse_write(struct file *fp, const char __user *user,
 	str_size = tmp;
 	tmp += i;
 ret:
+	*offs %= PAGE_SIZE;
 	write_unlock(&reverse_lock);
 	return tmp;
 }
