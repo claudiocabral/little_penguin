@@ -53,9 +53,15 @@ static void *seq_next(struct seq_file *m, void *v, loff_t *pos)
 
 static void print_recursive(struct seq_file *m, struct mount *mnt)
 {
+	char buf[4];
+	char *dir_path;
+
 	if (!mnt || !mnt->mnt_parent || !mnt_has_parent(mnt->mnt_parent))
 		return;
 	print_recursive(m, mnt->mnt_parent);
+	dir_path = dentry_path_raw(mnt->mnt_mountpoint, buf, sizeof(buf));
+	if (dir_path != ERR_PTR(-ENAMETOOLONG) && strncmp(dir_path, "/", 2) == 0)
+		return ;
 	seq_dentry(m, mnt->mnt_mountpoint, "");
 }
 
