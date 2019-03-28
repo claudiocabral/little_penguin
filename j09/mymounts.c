@@ -60,8 +60,9 @@ static void print_recursive(struct seq_file *m, struct mount *mnt)
 		return;
 	print_recursive(m, mnt->mnt_parent);
 	dir_path = dentry_path_raw(mnt->mnt_mountpoint, buf, sizeof(buf));
-	if (dir_path != ERR_PTR(-ENAMETOOLONG) && strncmp(dir_path, "/", 2) == 0)
-		return ;
+	if (dir_path != ERR_PTR(-ENAMETOOLONG) &&
+	    strncmp(dir_path, "/", 2) == 0)
+		return;
 	seq_dentry(m, mnt->mnt_mountpoint, "");
 }
 
